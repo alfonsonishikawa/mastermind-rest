@@ -39,7 +39,6 @@ The REST API reference and utility can be accessed at http://localhost:8081/swag
 
 # Pending work
 
-- [ ] Implement a `@MockBean` for the integration tests simulating a play.
 - [ ] Log somewhere other than console
 - [ ] Persist the games
 - [x] Return HTTP codes when an Exception is thrown
