@@ -15,9 +15,9 @@ For more information about the game: https://en.wikipedia.org/wiki/Mastermind_(b
 
 ## Project requirements
 We want a Rest API that simulates the role of the Masterminds codemaker, its main features are:
-* Create game (given a user request)
-* Return feedback given a code guess
-* Check game historic (optional, actually is a role of the board not the codemaker)
+- [x] Create game (given a user request)
+- [x] Return feedback given a code guess
+- [x] Check game historic (optional, actually is a role of the board not the codemaker)
 * The code should be production ready
 * Use git for versioning (commits and documentation will be valuated)
 * The code can be written in any language or framework (but java is preferred)
@@ -27,7 +27,7 @@ We want a Rest API that simulates the role of the Masterminds codemaker, its mai
 
 # How to execute
 
-Clone the project and execute the following to run the application on port 8081.
+Clone the project and execute the following to run the application on port 8081 running everything in-memory.
 
 ```
 mvn spring-boot:run
@@ -35,4 +35,13 @@ mvn spring-boot:run
 
 # REST API
 
-The REST API reference can be accessed at http://localhost:8081/swagger-ui.html
+The REST API reference and utility can be accessed at http://localhost:8081/swagger-ui.html
+
+# Pending work
+
+- [ ] Implement a `@MockBean` for the integration tests simulating a play.
+- [ ] Log somewhere other than console
+- [ ] Persist the games
+- [ ] Return HTTP codes when an Exception is thrown
+- [ ] Improve the configuration of a game with number of balls and number of colors
+- [ ] UX?
