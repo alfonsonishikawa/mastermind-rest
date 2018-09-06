@@ -39,7 +39,7 @@ The REST API reference and utility can be accessed at http://localhost:8081/swag
 
 # Future work
 
-- [ ] Log somewhere other than console
+- [x] Log somewhere other than console
 - [ ] Persist the games
 - [x] Return HTTP codes when an Exception is thrown
 - [ ] Improve the configuration of a game with number of balls and number of colors
