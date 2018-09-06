@@ -37,7 +37,7 @@ mvn spring-boot:run
 
 The REST API reference and utility can be accessed at http://localhost:8081/swagger-ui.html
 
-# Pending work
+# Future work
 
 - [ ] Log somewhere other than console
 - [ ] Persist the games
