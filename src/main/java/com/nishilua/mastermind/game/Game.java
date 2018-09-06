@@ -49,6 +49,14 @@ public class Game {
 	}
 	
 	/**
+	 * Sets the code to solve. Package scope to be used in testing.
+	 * @param code A list of colors. Length not checked!
+	 */
+	void setCode(List<Integer> code) {
+		this.code = new ArrayList<>(code);
+	}
+	
+	/**
 	 * Returns the guess history checked in this game
 	 * @return List of guess + correct both + correct color balls.
 	 */
@@ -62,7 +70,7 @@ public class Game {
 	 */
 	public GuessResult checkGuess(Guess guess) {
 		
-		List<Integer> guessClone = new ArrayList<>(guess.getBalls()); // Guess clone to mutate
+		List<Integer> guessBallsClone = new ArrayList<>(guess.getBalls()); // Guess clone to mutate
 		List<Integer> codeClone = new ArrayList<>(code); // Code clone to mutate
 		
 		int correctBoth = 0;
@@ -70,10 +78,10 @@ public class Game {
 
 		// Check for both correct
 		for (int i = 0 ; i < codeClone.size() ; i++) {
-			if (guessClone.get(i).equals(codeClone.get(i))) {
+			if (guessBallsClone.get(i).equals(codeClone.get(i))) {
 				// Match!
 				correctBoth++;
-				guessClone.set(i, -1); // Delete the balls
+				guessBallsClone.set(i, -1); // Delete the balls
 				codeClone.set(i, -1);
 			}
 		}
@@ -83,16 +91,21 @@ public class Game {
 				continue;
 			
 			int codeColor = codeClone.get(i);
-			int guessIndexColorMatch = guessClone.indexOf(codeColor);
+			int guessIndexColorMatch = guessBallsClone.indexOf(codeColor);
 			
 			if (guessIndexColorMatch != -1) {
 				// Color match!
 				correctColor++;
-				guessClone.set(guessIndexColorMatch, -1); // Delete the ball
+				guessBallsClone.set(guessIndexColorMatch, -1); // Delete the ball
 			}
 		}
 		
-		GuessResult guessResult = new GuessResult(guess, correctBoth, correctColor) ;
+		GuessResult guessResult;
+		try {
+			guessResult = new GuessResult((Guess)guess.clone(), correctBoth, correctColor);
+		} catch (CloneNotSupportedException e) {
+			throw new RuntimeException(e);
+		}
 		guessHistory.add(guessResult);
 		
 		return guessResult;
