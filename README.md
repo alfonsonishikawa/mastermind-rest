@@ -23,3 +23,12 @@ We want a Rest API that simulates the role of the Masterminds codemaker, its mai
 * The code can be written in any language or framework (but java is preferred)
 * Once finished send us a link to the remote git repository where it’s stored (Github, bitbucket, gitlab etc.)
 * This project should take between 6-8h
+
+
+# How to execute
+
+Clone the project and execute the following to run the application on port 8081.
+
+```
+mvn spring-boot:run
+```
