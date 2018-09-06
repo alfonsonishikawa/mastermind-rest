@@ -42,7 +42,7 @@ public class GameControllerTest {
     	when().
     		get("/v1/game").
     	then().
-    		statusCode(200).body("games", hasSize(0)) ;
+    		statusCode(200).body("", hasSize(0)) ;
     }
     
     @Test
@@ -61,9 +61,9 @@ public class GameControllerTest {
     		.get("/v1/game")
     	.then()
     		.statusCode(200)
-    		.body("games.size()", is(1))
+    		.body("",  hasSize(1))
     		.and()
-    		.body("games", contains(new String[] { gameId }) ) ;
+    		.body("", contains(new String[] { gameId }) ) ;
     }
     
 }
