@@ -37,7 +37,7 @@ public class GamesManager {
 	public Game getGame(String gameId) throws NonExistingGameException {
 		Game game = games.get(gameId);
 		if (game == null) {
-			throw new NonExistingGameException();
+			throw new NonExistingGameException(gameId);
 		}
 		return game;
 	}

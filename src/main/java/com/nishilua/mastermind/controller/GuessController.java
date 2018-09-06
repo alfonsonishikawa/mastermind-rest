@@ -45,7 +45,8 @@ public class GuessController {
 	@RequestMapping(value="/{game_id}", method = RequestMethod.GET)
 	@ApiOperation(value = "Returns a list of guesses ordered from first to last with the guess, the number of correct color and position balls, and the number of correct color balls.")
     @ApiResponses(value = { 
-            @ApiResponse(code = 200, message = "Success")
+            @ApiResponse(code = 200, message = "Success"),
+            @ApiResponse(code = 404, message = "The game ID does not exist") // NonExistingGameException
         })
 	public List<GuessResult> getHistory(@ApiParam(value="ID of the game to get all the guess history") @PathVariable("game_id") String gameId) throws NonExistingGameException{
 		return gamesManager.getGame(gameId).getHistory();
@@ -56,7 +57,9 @@ public class GuessController {
 	@RequestMapping(path="/{game_id}", method = RequestMethod.POST)
 	@ApiOperation(value = "Test a guess for the given game")
     @ApiResponses(value = { 
-            @ApiResponse(code = 200, message = "Success")
+            @ApiResponse(code = 200, message = "Success"),
+            @ApiResponse(code = 400, message = "Wrong guess data request"), // WrongGuessException
+            @ApiResponse(code = 404, message = "The game ID does not exist") // NonExistingGameException
         })
 	public GuessResult guess(
 			@ApiParam(value="ID of the game to make a guess") @PathVariable("game_id") String gameId,
