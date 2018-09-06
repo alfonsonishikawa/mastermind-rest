@@ -32,3 +32,7 @@ Clone the project and execute the following to run the application on port 8081.
 ```
 mvn spring-boot:run
 ```
+
+# REST API
+
+The REST API reference can be accessed at http://localhost:8081/swagger-ui.html
