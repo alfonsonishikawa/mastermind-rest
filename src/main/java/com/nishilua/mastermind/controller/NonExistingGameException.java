@@ -1,4 +1,4 @@
-package com.nishilua.mastermind.game;
+package com.nishilua.mastermind.controller;
 
 public class NonExistingGameException extends Exception {
 

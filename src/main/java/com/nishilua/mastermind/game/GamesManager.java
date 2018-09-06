@@ -7,8 +7,11 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
+import com.nishilua.mastermind.controller.NonExistingGameException;
+
 /**
- * Manages the creation and bookkeeping of the games 
+ * Manages the creation and bookkeeping of games.
+ * The IDs of games are kept here, as reference to each game in a hashmap.
  */
 @Component
 public class GamesManager {

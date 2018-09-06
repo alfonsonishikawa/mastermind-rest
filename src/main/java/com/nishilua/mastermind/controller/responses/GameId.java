@@ -3,7 +3,7 @@ package com.nishilua.mastermind.controller.responses;
 import io.swagger.annotations.ApiModel;
 
 /**
- * Response class to hold the list of games IDs
+ * Response class wrapper to hold a game ID
  */
 @ApiModel(description = "Holds a gameId")
 public class GameId {
