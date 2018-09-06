@@ -1,4 +1,4 @@
-package com.nishilua;
+package com.nishilua.mastermind;
 
 import org.springframework.context.annotation.Configuration;
 
