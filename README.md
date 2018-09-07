@@ -44,3 +44,4 @@ The REST API reference and utility can be accessed at http://localhost:8081/swag
 - [x] Return HTTP codes when an Exception is thrown
 - [ ] Improve the configuration of a game with number of balls and number of colors
 - [ ] UX?
+- [ ] Enable Spring's Actuator endpoints
